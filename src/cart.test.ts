@@ -15,3 +15,9 @@ test("keeps carts separate per session", () => {
   addItem("s2", { sku: "tea", unitPrice: 450, quantity: 3 });
   assert.equal(cartTotal("s2"), 1350);
 });
+
+test("returns 0 for guests without a cart", () => {
+  addItem("s1", { sku: "mug", unitPrice: 1200, quantity: 1 });
+  assert.equal(cartTotal(undefined), 0);
+  assert.equal(cartTotal(), 0);
+});
