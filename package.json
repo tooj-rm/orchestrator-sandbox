@@ -1,0 +1,20 @@
+{
+  "name": "orchestrator-sandbox",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tiny shop module with a planted bug, used to test the AI orchestrator end to end",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test",
+    "lint": "tsc --noEmit --noUnusedLocals --noUnusedParameters",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.1",
+    "typescript": "~5.9"
+  }
+}
