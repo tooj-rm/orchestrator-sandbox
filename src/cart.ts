@@ -24,8 +24,8 @@ export function getCart(sessionId?: string): Cart | undefined {
 
 /** Order total in cents, before discounts. */
 export function cartTotal(sessionId?: string): number {
-  const cart = getCart(sessionId);
-  return cart!.items.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
+  const items = getCart(sessionId)?.items ?? [];
+  return items.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
 }
 
 export function clearCarts(): void {
